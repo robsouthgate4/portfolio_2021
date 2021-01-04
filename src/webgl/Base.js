@@ -1,10 +1,15 @@
 import { isTouchDevice } 	from "Globals/Constants";
 import Emitter 	 			from "Common/Emitter";
 
+import 	* as Stats from "stats.js";
 
 export default class Base {
 
 	constructor() {
+
+		this.stats = new Stats();
+		this.stats.showPanel( 0 );
+		document.body.appendChild( this.stats.dom );
 
 		this.isRunning 		= false;
 		this.requestFrame 	= null;
@@ -182,17 +187,23 @@ export default class Base {
 
 		this.elapsed += delta;
 
+		this.stats.begin();
+
 		this.earlyUpdate( this.elapsed, delta );
 
 		this.update( this.elapsed, delta );
 
 		this.lateUpdate( this.elapsed, delta );
 		
+		this.stats.end();
+		
 		if ( this.isRunning ) {
 
 			this.requestFrame = requestAnimationFrame( this.run.bind( this ) );			
 
 		}
+
+		
 
 	}
 

@@ -14,7 +14,7 @@ export default class VideoLightsController {
 
 		Gui.Register({ type: 'folder', label: 'Lighting', open: true });
 
-		this.lightIntentsity = 0.04;
+		this.lightIntentsity = 0.08;
 
 		Gui.Register([
 
@@ -39,41 +39,52 @@ export default class VideoLightsController {
 
 	}
 
-	handleAppLoaded( domElements ) {
-
-		const { videoOne } = domElements;
-		const videoTexture = new VideoTexture( videoOne );
-
-		const width 		= videoTexture.image.videoWidth;
-		const height 		= videoTexture.image.videoHeight;
-
-		const canvas  = document.createElement( "canvas" );
-		canvas.id = "canvasVideo";
-
-		document.body.append( canvas );
-
-		Object.assign( canvas.style, {
-			display : "none",
-			position: "absolute",
-			left    : 0,
-			top     : 0,
-			width   : width / 4 + "px",
-			height  : height / 4 + "px",
-			zIndex  : 100
-		} );
-
-		const context = canvas.getContext( "2d" );
-
-		canvas.width  = width;
-		canvas.height = height;
+	handleAppLoaded( domElements ) {		
 
 		if ( this.generateLights ) {
 
-			setInterval(() => {
+			const { videoOne } = domElements;
+
+			videoOne.addEventListener( "canplay", () => {
+
+				const videoTexture = new VideoTexture( videoOne );
+
+				const width 		= videoTexture.image.videoWidth;
+				const height 		= videoTexture.image.videoHeight;
+
+				const canvas  = document.createElement( "canvas" );
+				canvas.id = "canvasVideo";
+
+				document.body.append( canvas );
+
+				Object.assign( canvas.style, {
+					display : "none",
+					position: "absolute",
+					left    : 0,
+					top     : 0,
+					width   : width / 4 + "px",
+					height  : height / 4 + "px",
+					zIndex  : 100
+				} );
+
+				const context = canvas.getContext( "2d" );
+
+				canvas.width  = width ;
+				canvas.height = height;
+
+				console.log( "can play video" );
+
+				setTimeout( () => {
+
+					setInterval(() => {
 			
-				this.update( { context, videoTexture, width, height } );
-	
-			}, 1000 / 10 );
+						this.update( { context, videoTexture, width, height } );
+			
+					}, 1000 / 6 );
+
+				}, 1000 );				
+
+			} );		
 
 		}
 		
@@ -115,8 +126,8 @@ export default class VideoLightsController {
 				
 				lightColor.setRGB( data[ p ], data[ p + 1 ], data[ p + 2 ] );
 
-				//context.fillStyle = "rgba(" + data[ p ] + "," + data[ p + 1 ] + "," + data[ p + 2 ] + "," + data[ p + 3 ] + ")";
-				//context.fillRect( x, y, sample_size / divider, sample_size / divider );
+				context.fillStyle = "rgba(" + data[ p ] + "," + data[ p + 1 ] + "," + data[ p + 2 ] + "," + data[ p + 3 ] + ")";
+				context.fillRect( x, y, sample_size / divider, sample_size / divider );
 
 			}
 		}

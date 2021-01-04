@@ -37,7 +37,7 @@ void main() {
 
     color.rgb    += random( uvRandom ) * 0.01;    
 
-    gl_FragColor.rgb    = filmic( color );
+    gl_FragColor.rgb    = color;
     
     gl_FragColor.a      = 1.0;
 

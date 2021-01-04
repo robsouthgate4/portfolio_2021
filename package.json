@@ -1,60 +1,59 @@
 {
-  "name": "portfolio-2021",
-  "private": false,
-  "description": "Gatsby site with Three.js component",
-  "version": "0.1.0",
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "dependencies": {
-    "babel-plugin-styled-components": "^1.12.0",
-    "css-loader": "^3.5.3",
-    "event-emitter": "^0.3.5",
-    "gatsby": "^2.26.1",
-    "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-force-file-loader": "^0.1.0",
-    "gatsby-plugin-glslify": "^1.0.0",
-    "gatsby-plugin-styled-components": "^3.7.0",
-    "gatsby-source-filesystem": "^2.6.1",
-    "gatsby-transformer-remark": "^2.11.1",
-    "glsl-curl-noise": "0.0.4",
-    "glsl-easings": "^1.0.0",
-    "glsl-face-normal": "^1.0.2",
-    "glsl-noise": "0.0.0",
-    "glsl-pi": "^1.0.0",
-    "glsl-tone-map": "^1.0.0",
-    "glsl-vignette": "^1.1.0",
-    "glslify": "^7.1.1",
-    "glslify-loader": "^2.0.0",
-    "gsap": "^3.5.1",
-    "guify": "^0.12.0",
-    "image-promise": "^7.0.1",
-    "load-bmfont": "^1.4.1",
-    "lodash": "^4.17.20",
-    "pretty-ms": "^7.0.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1",
-    "three": "^0.122.0",
-    "three-bmfont-text": "^3.0.1",
-    "uil": "^1.0.1"
-  },
-  "devDependencies": {
-    "prettier": "2.1.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "bugs": {
-    "url": ""
-  }
+    "name": "portfolio-2021",
+    "private": false,
+    "description": "Gatsby site with Three.js component",
+    "version": "0.1.0",
+    "license": "0BSD",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+        "start": "npm run develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    },
+    "dependencies": {
+        "babel-plugin-styled-components": "^1.12.0",
+        "css-loader": "^3.5.3",
+        "event-emitter": "^0.3.5",
+        "gatsby": "^2.26.1",
+        "gatsby-plugin-alias-imports": "^1.0.5",
+        "gatsby-plugin-force-file-loader": "^0.1.0",
+        "gatsby-plugin-glslify": "^1.0.0",
+        "gatsby-plugin-styled-components": "^3.7.0",
+        "gatsby-source-filesystem": "^2.6.1",
+        "gatsby-transformer-remark": "^2.11.1",
+        "glsl-curl-noise": "0.0.4",
+        "glsl-easings": "^1.0.0",
+        "glsl-face-normal": "^1.0.2",
+        "glsl-noise": "0.0.0",
+        "glsl-pi": "^1.0.0",
+        "glsl-tone-map": "^1.0.0",
+        "glsl-vignette": "^1.1.0",
+        "glslify": "^7.1.1",
+        "glslify-loader": "^2.0.0",
+        "guify": "^0.12.0",
+        "image-promise": "^7.0.1",
+        "load-bmfont": "^1.4.1",
+        "lodash": "^4.17.20",
+        "pretty-ms": "^7.0.1",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-router-dom": "^5.2.0",
+        "stats.js": "^0.17.0",
+        "styled-components": "^5.2.1",
+        "three": "^0.122.0",
+        "three-bmfont-text": "^3.0.1"
+    },
+    "devDependencies": {
+        "prettier": "2.1.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "bugs": {
+        "url": ""
+    }
 }

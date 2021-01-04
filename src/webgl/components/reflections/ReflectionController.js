@@ -18,7 +18,7 @@ export default class ReflectionController {
 		this.object = object;
 
 		this.texture 		= null;
-		this.resolution		= 0.8;
+		this.resolution		= 0.5;
 		this.iterations 	= 3;
 
 		this.initGUIRegistration();		
