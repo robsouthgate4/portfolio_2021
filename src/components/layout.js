@@ -34,7 +34,7 @@ const Layout = ( { children } ) => {
 			color: ${props => (props.theme === "purple" ? "purple" : "white")};
 		}
 		.guify-container_be6yU {
-			display: none;
+			//display: none;
 		}
 	`
 

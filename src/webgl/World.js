@@ -12,10 +12,15 @@ import Simulation           from "./components/simulation";
 import Room                 from "./components/room";
 
 import { OrbitControls }    from "three/examples/jsm/controls/OrbitControls";
-import { BackSide, BoxGeometry, Color, DirectionalLight, DirectionalLightHelper, FrontSide, Mesh, MeshBasicMaterial, MeshNormalMaterial, PointLight, PointLightHelper } from "three";
+
+import { PointLight } from "three";
+
 import assets from "./globals/assets";
-import ReflectionController from "./components/reflections/ReflectionController";
+
+import ReflectionController  from "./components/reflections/ReflectionController";
 import VideoLightsController from "./components/lighting/VideoLightsController";
+
+
 
 export default class World extends Base {
 
