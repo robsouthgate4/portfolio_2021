@@ -14,22 +14,22 @@ export default class VideoLightsController {
 
 		Gui.Register({ type: 'folder', label: 'Lighting', open: true });
 
-		this.lightIntentsity = 0.04;
+		this.lightIntentsity = 10.4;
 
-		Gui.Register([
+		// Gui.Register([
 
-			{ 
-				type    : 'range',
-				folder  : "Lighting",
-				label   : 'Light intensity',
-				min     : 0.01,
-				max     : 0.1,
-				step    : 0.01,
-				value   : this.lightIntentsity,
-				onChange: ( value ) => this.handleLightIntensityUpdate( value )
-			}
+		// 	{ 
+		// 		type    : 'range',
+		// 		folder  : "Lighting",
+		// 		label   : 'Light intensity',
+		// 		min     : 0.01,
+		// 		max     : 0.1,
+		// 		step    : 0.01,
+		// 		value   : this.lightIntentsity,
+		// 		onChange: ( value ) => this.handleLightIntensityUpdate( value )
+		// 	}
 
-		]);
+		// ]);
 		
 	}
 
@@ -93,33 +93,35 @@ export default class VideoLightsController {
 
 	update( drawData ) {
 
-		const { context, videoTexture, width, height } = drawData;
+		//const { context, videoTexture, width, height } = drawData;
 
-		context.drawImage( videoTexture.image, 0, 0 );
+		//context.drawImage( videoTexture.image, 0, 0 );
 
-		const imageData = context.getImageData(0, 0, width, height);
+		// if(!context) return;
 
-		const data = imageData.data;
+		// const imageData = context.getImageData(0, 0, width, height);
 
-		let sample_size = width * height;
+		// const data = imageData.data;
 
-		let lightColor = new Color();
+		// let sample_size = width * height;
 
-		const divider = 1000;
+		let lightColor = new Color("rgb(255, 0, 0)");
 
-		for (let y = 0; y < height / divider; y += sample_size / divider ) {
+		// const divider = 1000;
 
-			for (let x = 0; x < width / divider; x += sample_size / divider) {
+		// for (let y = 0; y < height / divider; y += sample_size / divider ) {
 
-				let p = ( x + ( y * width ) ) * 4;
+		// 	for (let x = 0; x < width / divider; x += sample_size / divider) {
+
+		// 		let p = ( x + ( y * width ) ) * 4;
 				
-				lightColor.setRGB( data[ p ], data[ p + 1 ], data[ p + 2 ] );
+		// 		lightColor.setRGB( data[ p ], data[ p + 1 ], data[ p + 2 ] );
 
-				//context.fillStyle = "rgba(" + data[ p ] + "," + data[ p + 1 ] + "," + data[ p + 2 ] + "," + data[ p + 3 ] + ")";
-				//context.fillRect( x, y, sample_size / divider, sample_size / divider );
+		// 		//context.fillStyle = "rgba(" + data[ p ] + "," + data[ p + 1 ] + "," + data[ p + 2 ] + "," + data[ p + 3 ] + ")";
+		// 		//context.fillRect( x, y, sample_size / divider, sample_size / divider );
 
-			}
-		}
+		// 	}
+		// }
 
 		this.panel1Light.color = lightColor;
 
